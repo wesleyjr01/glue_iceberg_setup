@@ -1,0 +1,43 @@
+name: "Run Test Suite Tests"
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+
+jobs:
+  pytest:
+    name: "Run Python Tests"
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: "temurin"
+          java-version: "8"
+
+      - name: Set up Python version
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+      - name: Download Iceberg JAR
+        run: wget https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.3_2.12/1.0.0/iceberg-spark-runtime-3.3_2.12-1.0.0.jar -P /opt/spark/
+
+      - name: Install Python test dependencies
+        run: |
+          cd src/
+          pip install -r requirements-docker.txt
+
+      - name: Run pytest
+        run: |
+          cd glue_jobs/
+          pytest
