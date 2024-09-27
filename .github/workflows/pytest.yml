@@ -39,5 +39,5 @@ jobs:
 
       - name: Run pytest
         run: |
-          cd glue_jobs/
+          cd src/
           pytest
