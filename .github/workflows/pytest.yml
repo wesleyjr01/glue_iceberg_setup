@@ -1,9 +1,12 @@
-name: "Run Test Suite Tests"
+name: "pytest - Run Test Suite"
 
 on:
+  push:
+    branches-ignore:
+      - main  # Ignore direct pushes to the main branch.
   pull_request:
-    paths:
-      - 'src/**'
+    branches:
+      - main  # Trigger on PRs targeting the main branch.
 
 jobs:
   pytest:
