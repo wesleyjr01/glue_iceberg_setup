@@ -201,3 +201,4 @@ if __name__ == "__main__":
     )
     iceberg_upsert_job.create_or_update_iceberg_table()
     job.commit()
+    #
