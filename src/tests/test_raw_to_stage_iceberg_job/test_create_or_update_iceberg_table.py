@@ -22,7 +22,6 @@ def test_create_or_update_iceberg_table_method_created_a_table(
     iceberg_job = RawToStageIcebergJob(
         spark=fixture_spark_session,
         glue_context=None,
-        job=None,
         iceberg_db=iceberg_db,
         iceberg_table=iceberg_table,
         source_db="source_db",
@@ -65,7 +64,6 @@ def test_create_or_update_iceberg_table_method_created_a_then_appended_table(
     iceberg_job = RawToStageIcebergJob(
         spark=fixture_spark_session,
         glue_context=None,
-        job=None,
         iceberg_db=iceberg_db,
         iceberg_table=iceberg_table,
         source_db="source_db",
@@ -126,7 +124,6 @@ def test_create_or_update_iceberg_table_method_created_a_then_cannot_append_to_t
     iceberg_job = RawToStageIcebergJob(
         spark=fixture_spark_session,
         glue_context=None,
-        job=None,
         iceberg_db=iceberg_db,
         iceberg_table=iceberg_table,
         source_db="source_db",

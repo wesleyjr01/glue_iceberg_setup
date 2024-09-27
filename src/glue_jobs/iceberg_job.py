@@ -41,7 +41,6 @@ class RawToStageIcebergJob:
     ):
         self.spark = spark
         self.glue_context = glue_context
-        self.job = job
         self.iceberg_db = iceberg_db
         self.iceberg_table = iceberg_table
         self.partition_by = partition_by
