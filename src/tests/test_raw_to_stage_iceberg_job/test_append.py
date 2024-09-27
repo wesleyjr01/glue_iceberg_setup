@@ -19,7 +19,6 @@ def test_create_or_update_iceberg_table_create_then_append(
     iceberg_job = RawToStageIcebergJob(
         spark=fixture_spark_session,
         glue_context=None,
-        job=None,
         iceberg_db=iceberg_db,
         iceberg_table=iceberg_table,
         source_db="source_db",
@@ -69,7 +68,6 @@ def test_create_or_update_iceberg_table_create_then_append_twice(
     iceberg_job = RawToStageIcebergJob(
         spark=fixture_spark_session,
         glue_context=None,
-        job=None,
         iceberg_db=iceberg_db,
         iceberg_table=iceberg_table,
         source_db="source_db",

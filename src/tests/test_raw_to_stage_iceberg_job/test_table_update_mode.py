@@ -6,7 +6,6 @@ def test_if_append_mode_is_implemented():
     iceberg_job = RawToStageIcebergJob(
         spark=None,
         glue_context=None,
-        job=None,
         iceberg_db="iceberg_db",
         iceberg_table="iceberg_table",
         source_db="source_db",
@@ -23,7 +22,6 @@ def test_if_overwrite_mode_is_not_implemented():
         iceberg_job = RawToStageIcebergJob(
             spark=None,
             glue_context=None,
-            job=None,
             iceberg_db="iceberg_db",
             iceberg_table="iceberg_table",
             source_db="source_db",
@@ -38,7 +36,6 @@ def test_if_upsert_mode_is_not_implemented():
         iceberg_job = RawToStageIcebergJob(
             spark=None,
             glue_context=None,
-            job=None,
             iceberg_db="iceberg_db",
             iceberg_table="iceberg_table",
             source_db="source_db",
@@ -53,7 +50,6 @@ def test_if_random_mode_raises_value_error():
         iceberg_job = RawToStageIcebergJob(
             spark=None,
             glue_context=None,
-            job=None,
             iceberg_db="iceberg_db",
             iceberg_table="iceberg_table",
             source_db="source_db",

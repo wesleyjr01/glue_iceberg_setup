@@ -41,7 +41,6 @@ class RawToStageIcebergJob:
     ):
         self.spark = spark
         self.glue_context = glue_context
-        self.job = job
         self.iceberg_db = iceberg_db
         self.iceberg_table = iceberg_table
         self.partition_by = partition_by
@@ -201,4 +200,3 @@ if __name__ == "__main__":
     )
     iceberg_upsert_job.create_or_update_iceberg_table()
     job.commit()
-    #
