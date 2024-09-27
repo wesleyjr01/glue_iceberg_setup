@@ -41,4 +41,4 @@ jobs:
         run: |
           BUCKET_NAME="test-deploy-w-${TARGET_ACCOUNT}"
           echo "Uploading to bucket: $BUCKET_NAME"
-          aws s3 cp ./src s3://$BUCKET_NAME/ --recursive
+          aws s3 cp ./src/glue_jobs/ s3://$BUCKET_NAME/ --recursive
